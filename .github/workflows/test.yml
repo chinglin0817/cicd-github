@@ -9,5 +9,5 @@ jobs:
     steps:
       - name: 印出一行字
         run: echo "任務執行成功！"
-      -name: 測試
-        run: echo "very good"
+      - name: 測試
+        run: return 5
