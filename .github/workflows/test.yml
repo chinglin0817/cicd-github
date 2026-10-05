@@ -9,5 +9,17 @@ jobs:
     steps:
       - name: 印出一行字
         run: echo "任務執行成功！"
-      - name: 測試
-        run: return 5
+
+      - name: 情況一：純印出數字 5
+        run: echo "輸出數字：5"
+
+      - name: 情況二：設定輸出變數 (Output)
+        id: step_var
+        run: echo "my_number=5" >> "$GITHUB_OUTPUT"
+
+      - name: 讀取上一步的變數
+        run: echo "讀取到的變數值為：${{ steps.step_var.outputs.my_number }}"
+
+      # 如果想測試任務失敗的情況，把下面這兩行註解拿掉（刪除最前面的 #）
+      # - name: 情況三：刻意讓任務回傳錯誤代碼 (Exit 5)
+      #   run: exit 5
