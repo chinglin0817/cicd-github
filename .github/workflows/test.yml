@@ -1,6 +1,7 @@
 name: 簡單手動測試
 
 on:
+  push:
   workflow_dispatch:
 
 jobs:
@@ -8,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 印出一行字
-        run: echo "任務執行成功！"
+        run: echo "任務執行成功！非常好"
 
-      - name: 情況一：純印出數字 5
-        run: echo "輸出數字：5"
+      - name: 情況一：純印出數字 1111
+        run: echo "輸出數字：1111"
 
       - name: 情況二：設定輸出變數 (Output)
         id: step_var
-        run: echo "my_number=5" >> "$GITHUB_OUTPUT"
+        run: echo "my_number=55555" >> "$GITHUB_OUTPUT"
 
       - name: 讀取上一步的變數
         run: echo "讀取到的變數值為：${{ steps.step_var.outputs.my_number }}"
