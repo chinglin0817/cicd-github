@@ -1,0 +1,11 @@
+name: name: 簡單手動測試
+
+on:
+  workflow_dispatch:
+
+jobs:
+  my-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 印出一行字
+        run: echo "任務執行成功！"
